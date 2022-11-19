@@ -110,3 +110,13 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+.madeby {
+  font-size: 20px;
+  color: #999;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* PLace center */
+  text-align: center;
+}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
+import Footer from './components/Footer'
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -9,20 +10,20 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: 'Doctors Appointment',
-      day: 'Feb 5th at 2:30pm',
+      text: 'Deploy This Project 🍁',
+      day: 'Nov 20th at 5:00am',
       reminder: true,
     },
     {
       id: 2,
-      text: 'Meeting at School',
-      day: 'Feb 6th at 1:30pm',
+      text: 'Schedule Movie Plan',
+      day: 'Jan 5th at 1:30pm',
       reminder: true,
     },
     {
       id: 3,
-      text: 'Food Shopping',
-      day: 'Feb 5th at 2:30pm',
+      text: 'Search For New Travel Destinations',
+      day: 'July 21st at 2:30pm',
       reminder: false,
     },
   ])
@@ -47,11 +48,14 @@ function App() {
 
 
   return (
-    <div className='container'>
-      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks To Show'}
-    </div>
+    <>
+      <div className='container'>
+        <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+        {showAddTask && <AddTask onAdd={addTask} />}
+        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks To Show'}
+      </div>
+      <Footer />
+    </>
 
   );
 }
